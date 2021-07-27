@@ -59,8 +59,8 @@
             background-color: white;
             border: none;
 
-              /* Used for debugging in browser */
-              border: 1px dashed #081126;
+            /* Used for debugging in browser */
+            // border: 1px dashed #081126;
         }
 
         header {
@@ -165,6 +165,21 @@
                     grid-template-columns: 1fr;
                 }
             }
+
+            &#cover-letter {
+                padding: 0 7em;
+                margin-top: 8em;
+                signature {
+                    display: block;
+                    margin-top: 5em;
+
+                    img {
+                        width: 200px;
+                        margin-left: -3em;
+                    }
+                }
+            }
+
             &#skills-and-expertise {
                 display: grid;
                 margin: 0 20px 0 60px;

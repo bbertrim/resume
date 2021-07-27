@@ -5,12 +5,12 @@ import PrintLayout from './components/PrintLayout/PrintLayout.js'
 import ScreenLayout from './components/ScreenLayout/ScreenLayout.js'
 
 function App() {
-	return (
-		<>
-			<PrintLayout />
-			<ScreenLayout />
-		</>
-	);
+    return (
+        <>
+            <PrintLayout />
+            <ScreenLayout />
+        </>
+    );
 }
 
 export default App;

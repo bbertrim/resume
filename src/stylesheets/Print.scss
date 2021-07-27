@@ -1,0 +1,192 @@
+@media only print {
+    @page {
+        margin: 0mm;
+        /* size: 28cm 22cm; */
+        /* 11" x 8.5" */
+        /* size: letter landscape; */
+        size: 215.9mm 279.4mm; /* 8.5" x 11" */
+    }
+
+    printlayout {
+        -webkit-print-color-adjust:exact;
+        color-adjust: exact;
+
+        display: block;
+
+        width: 100%;
+        color: #28272b;
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            padding-top: 1em;
+            margin: 0 .3em;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 24pt;
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 14pt;
+            line-height: 1em;
+            padding-top: .3em;
+            margin: 0 1em;
+        }
+
+        page {
+            display: block;
+
+            box-sizing: border-box;
+            position: relative;
+
+            width: 215.9mm; /* 8.5in */
+            max-width: 215.9mm; /* 8.5in */
+            height: 279.4mm; /* 11in */
+            max-height: 279.4mm; /* 11in */
+            margin: 0;
+            padding: 0 0.25cm;
+            // background-color: white;
+            overflow: hidden;
+
+            font-size: 10pt;
+
+            page-break-after: always;
+            background-color: white;
+            border: none;
+
+              /* Used for debugging in browser */
+              border: 1px dashed #081126;
+        }
+
+        header {
+            background: #081126;
+            background: linear-gradient(0deg, #081126 0%, #091227 33%, #232c3b 100%);
+            color: #f3fbff;
+            margin: 0 -0.25cm;
+            // Highlight at the bottom
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: 999;
+                bottom: 0px;
+                height: 2px;
+                background: linear-gradient(0deg, #232c3b00 0%, #e3e8ea33 100%);
+                width: 100%;
+            }
+
+            // box-shadow: 0 5px #061324;
+            filter: drop-shadow(0 5pt 2pt rgba(6, 16, 36, 0.2));
+
+            a {
+                color: #f3fbff;
+                text-decoration: none;
+            }
+
+            namecard {
+                text-align: center;
+            }
+
+            socials {
+                margin-top: 5mm;
+                padding-bottom: 14pt;
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                > social {
+                    display: flex;
+                    align-items: center;
+                    justify-items: center;
+
+                    a {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    icon {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-items: center;
+                        background-color: #f3fbff;
+                        border-radius: 50%;
+                        width: 36px;
+                        height: 36px;
+                        margin: .5em;
+                        svg {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        section {
+            margin: 0;
+
+            h1 {
+                text-align: center;
+                margin-bottom: 1.5em;
+            }
+
+            institution {
+                display: grid;
+                align-items: start;
+                grid-template-columns: 33% auto;
+                margin-bottom: 2em;
+
+                overview {
+                    grid-column: 1;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14pt;
+                    line-height: 1.1em;
+                    institutiontitle {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                    institutionname, timescale {
+                        font-size: 12pt;
+                        font-weight: normal;
+                    }
+                }
+
+                description {
+                    grid-column: 2;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+            }
+            &#skills-and-expertise {
+                display: grid;
+                margin: 0 20px 0 60px;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+
+                h1 {
+                    grid-column: 1 / span 4;
+                }
+
+                category {
+                    h2 {
+                        margin: 0;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: bold;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

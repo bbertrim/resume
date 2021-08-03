@@ -1,32 +1,23 @@
 import Navigation from '../Navigation/Navigation';
 import ScreenHeader from '../ScreenHeader/ScreenHeader';
 import signatureImage from '../../images/signature.png';
-
-// import useScrollPercentage from '../../hooks/useScrollPercentage/useScrollPercentage';
+import React from 'react';
+import { getMinMaxScrollRange, normalizeNumber } from '../../helpers';
 import { useScrollPercentage } from 'react-scroll-percentage';
 
 export const ScreenLayout = props => {
 
     const [scrollRef, scrollPercentage] = useScrollPercentage( { threshold: 0, });
 
-    const normalizeNumber = (min, max, value) => {
-        let result = 0;
-        if(value < min){
-            result = 0;
-        } else if( value > max){
-            result = 1;
-        } else{
-            result = (value - min) / (max - min);
-        }
-        return result;
-    }
+    const viewportHeight = window.visualViewport.height;
+    const [minScroll, maxScroll] = getMinMaxScrollRange(viewportHeight);
 
 	return (
         <div id="screenlayout" ref={scrollRef}>
-            <Navigation scrollPercentage={scrollPercentage}/>
+            <Navigation scrollPercentage={scrollPercentage} minScroll={minScroll} maxScroll={maxScroll} />
             <content>
                 <ScreenHeader />
-                <section id="about-me" id="about-me">
+                <section id="about-me">
                     <h1>About Me</h1>
                     <p>I am a motivated and enterprising individual. I’m especially drawn to expanding my knowledge and abilities by investigating innovative technologies and approaches to challenges and problems that I’m presented with. This has led me to have a very diversified skill set that continues to expand and allows me to bring a large amount of experience and perspective when working on solutions.</p>
                     <p>I bring with me experience working in and around the entirety of the development lifecycle, from conception and requirements gathering to launching and supporting the application. Additionally, I have experience working in multiple development and production environments/stacks. This includes Linux based systems running on bare metal, in Virtual Machines, Docker Containers running in Kubernetes as well applications deployed to cloud based services. Each with specific stacks for the given solution, be it lightweight micro services or larger web applications such as Liferay and Drupal.</p>
@@ -183,7 +174,7 @@ export const ScreenLayout = props => {
                         </div>
                     </div>
                 </section>
-                <div class="hint-bubble" style={{opacity: 1 - normalizeNumber(0.22, 0.73, scrollPercentage) / 0.2 }} >
+                <div class="hint-bubble" style={{opacity: 1 - normalizeNumber( minScroll, maxScroll, scrollPercentage) / 0.2 }} >
                     <div class="text full">Looking for a PDF or printable version? You can use your browser's built in <button type="button" onClick={ () => window.print() }>Print</button> functionality for that!</div>
                     <div class="text minimal">Use your browser's <button type="button" onClick={ () => window.print() }>Print</button> functionality for a PDF/Print friendly version!</div>
                 </div>

@@ -69,8 +69,13 @@
                         list-style: none;;
                         border-left: 4px solid transparent;
                         padding-left: .3em;
-                        a {
+                        button {
                             cursor: pointer;
+                            background: none;
+                            border: none;
+                            font: inherit;
+                            text-align: left;
+                            padding: 0;
                         }
                     }
                 }

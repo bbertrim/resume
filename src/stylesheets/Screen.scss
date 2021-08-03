@@ -47,7 +47,7 @@
             grid-column: 2;
             box-sizing: border-box;
             width: 200px;
-
+            margin-left: -37px;
             padding-left: 2em;
             display: flex;
 
@@ -79,7 +79,7 @@
         }
 
         content {
-            width: 760px;
+            width: 880px;
 
             header {
                 position: fixed;
@@ -182,6 +182,7 @@
                     align-items: start;
                     grid-template-columns: 33% auto;
                     margin-bottom: 2em;
+                    column-gap: 1em;
 
                     .overview {
                         grid-column: 1;
@@ -240,7 +241,7 @@
             height: $height;
             position: fixed;
             bottom: 0;
-            left: calc( 50vw + 345px);
+            left: calc( 50vw + 300px);
             font-size: 14px;
             .text{
                 margin: 30px 20px 20px 20px;

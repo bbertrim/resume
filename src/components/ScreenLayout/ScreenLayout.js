@@ -7,9 +7,15 @@ import { useScrollPercentage } from 'react-scroll-percentage';
 
 export const ScreenLayout = props => {
 
-    const [scrollRef, scrollPercentage] = useScrollPercentage( { threshold: 0, });
+    const visualViewport = window.visualViewport;
+    let viewportHeight = 937; // Default best guess for 1080p
+    if(visualViewport){       // Firefox doesn't always populate this?
+        viewportHeight = visualViewport.height;
+    } else if (window.innerHeight) {
+        viewportHeight = window.innerHeight;
+    }
 
-    const viewportHeight = window.visualViewport.height;
+    const [scrollRef, scrollPercentage] = useScrollPercentage( { threshold: 0, });
     const [minScroll, maxScroll] = getMinMaxScrollRange(viewportHeight);
 
 	return (

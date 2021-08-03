@@ -79,7 +79,7 @@
         }
 
         content {
-            width: 760px;
+            width: 880px;
 
             header {
                 position: fixed;
@@ -182,6 +182,7 @@
                     align-items: start;
                     grid-template-columns: 33% auto;
                     margin-bottom: 2em;
+                    column-gap: 1em;
 
                     .overview {
                         grid-column: 1;

@@ -7,7 +7,7 @@
         size: 215.9mm 279.4mm; /* 8.5" x 11" */
     }
 
-    printlayout {
+    #printlayout {
         -webkit-print-color-adjust:exact;
         color-adjust: exact;
 
@@ -38,7 +38,7 @@
             margin: 0 1em;
         }
 
-        page {
+        .page {
             display: block;
 
             box-sizing: border-box;
@@ -87,11 +87,11 @@
                 text-decoration: none;
             }
 
-            namecard {
+            #namecard {
                 text-align: center;
             }
 
-            socials {
+            #socials {
                 margin-top: 5mm;
                 padding-bottom: 14pt;
                 display: grid;
@@ -99,7 +99,7 @@
                 justify-items: center;
                 grid-template-columns: 1fr 1fr 1fr;
 
-                > social {
+                > .social {
                     display: flex;
                     align-items: center;
                     justify-items: center;
@@ -110,7 +110,7 @@
                         align-items: center;
                     }
 
-                    icon {
+                    .icon {
                         display: inline-flex;
                         align-items: center;
                         justify-items: center;
@@ -136,24 +136,24 @@
                 margin-bottom: 1.5em;
             }
 
-            institution {
+            .institution {
                 display: grid;
                 align-items: start;
                 grid-template-columns: 33% auto;
                 margin-bottom: 2em;
 
-                overview {
+                .overview {
                     grid-column: 1;
                     display: grid;
                     grid-template-columns: 1fr;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 14pt;
                     line-height: 1.1em;
-                    institutiontitle {
+                    .institutiontitle {
                         text-transform: uppercase;
                         font-weight: bold;
                     }
-                    institutionname, timescale {
+                    .institutionname, .timescale {
                         font-size: 12pt;
                         font-weight: normal;
                     }
@@ -180,10 +180,11 @@
                 }
             }
 
-            &#skills-and-expertise {
+            &#skills {
                 display: grid;
-                margin: 0 20px 0 60px;
+                margin-left: 1em;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
+                column-gap: 4em;
 
                 h1 {
                     grid-column: 1 / span 4;

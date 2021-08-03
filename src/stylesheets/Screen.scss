@@ -47,7 +47,7 @@
             grid-column: 2;
             box-sizing: border-box;
             width: 200px;
-
+            margin-left: -37px;
             padding-left: 2em;
             display: flex;
 
@@ -240,7 +240,7 @@
             height: $height;
             position: fixed;
             bottom: 0;
-            left: calc( 50vw + 345px);
+            left: calc( 50vw + 300px);
             font-size: 14px;
             .text{
                 margin: 30px 20px 20px 20px;

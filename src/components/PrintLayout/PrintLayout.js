@@ -106,7 +106,7 @@ export const PrintLayout = props => {
                             <li>React</li>
                             <li>Spring/Hibernate</li>
                             <li>Symfony/Doctrine</li>
-                            <li>YUI/AlloyU</li>
+                            <li>YUI/AlloyUI</li>
                         </ul>
                     </div>
 

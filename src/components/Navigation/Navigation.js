@@ -32,6 +32,7 @@ export const Navigation = props => {
     return (
         <nav>
             <content>
+                {/* { scrollPercentage.toFixed(2) }% */}
                 <ul>
                     <li style={{ borderColor: `rgba(40, 39, 43, ${calculateTransparency(0, 0.2, scrollPercentage)}`}}>
                         <a onClick={ () => scrollTo("#screenlayout #about-me")}>About Me</a>
@@ -39,7 +40,7 @@ export const Navigation = props => {
                     <li style={{ borderColor: `rgba(40, 39, 43, ${calculateTransparency(0.35, 0.5, scrollPercentage)}`}}>
                         <a onClick={ () => scrollTo("#screenlayout #experience") }>Experience</a>
                     </li>
-                    <li style={{ borderColor: `rgba(40, 39, 43, ${calculateTransparency(0.89, 0.1, scrollPercentage)}`}}>
+                    <li style={{ borderColor: `rgba(40, 39, 43, ${calculateTransparency(0.89, 0.2, scrollPercentage)}`}}>
                         <a onClick={ () => scrollTo("#screenlayout #skills") }>Skills & Expertise</a>
                     </li>
                     <li style={{ borderColor: `rgba(40, 39, 43, ${calculateTransparency(1, 0.2, scrollPercentage)}`}}>

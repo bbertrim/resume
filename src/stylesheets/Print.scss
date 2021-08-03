@@ -169,7 +169,7 @@
             &#cover-letter {
                 padding: 0 7em;
                 margin-top: 8em;
-                signature {
+                #signature {
                     display: block;
                     margin-top: 5em;
 
@@ -190,7 +190,7 @@
                     grid-column: 1 / span 4;
                 }
 
-                category {
+                .category {
                     h2 {
                         margin: 0;
                         font-family: 'Montserrat', sans-serif;

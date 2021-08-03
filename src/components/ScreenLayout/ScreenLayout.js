@@ -9,6 +9,18 @@ export const ScreenLayout = props => {
 
     const [scrollRef, scrollPercentage] = useScrollPercentage( { threshold: 0, });
 
+    const normalizeNumber = (min, max, value) => {
+        let result = 0;
+        if(value < min){
+            result = 0;
+        } else if( value > max){
+            result = 1;
+        } else{
+            result = (value - min) / (max - min);
+        }
+        return result;
+    }
+
 	return (
         <div id="screenlayout" ref={scrollRef}>
             <Navigation scrollPercentage={scrollPercentage}/>
@@ -171,6 +183,10 @@ export const ScreenLayout = props => {
                         </div>
                     </div>
                 </section>
+                <div class="hint-bubble" style={{opacity: 1 - normalizeNumber(0.22, 0.73, scrollPercentage) / 0.2 }} >
+                    <div class="text full">Looking for a PDF or printable version? You can use your browser's built in <button type="button" onClick={ () => window.print() }>Print</button> functionality for that!</div>
+                    <div class="text minimal">Use your browser's <button type="button" onClick={ () => window.print() }>Print</button> functionality for a PDF/Print friendly version!</div>
+                </div>
             </content>
 		</div>
 	)

@@ -33,6 +33,7 @@ npx gulp      # Takes the production build and combines it all into the index.ht
 
 # Roadmap
 
-- Improve the Web UX to be more then a copy of the original print resume
-- Add a mobile view
-- Store fonts within the generated `index.html` file
+- Store fonts within the generated `index.html` file via data URLs
+- Fix issue with Safari PDF export (Safari has a hard coded 2cm margin which causes every other page to be blank when printing)
+- Improve scrolling effects an employ other effects such as paralax and translation transitions instead of just opacity
+- Add navigatable subsections for web view with additional information such as acomplishments and more detailed information around each section

@@ -1,1 +1,1 @@
-v1.2.4-1 Now with Github Pages!
+v1.2.5 Content Update

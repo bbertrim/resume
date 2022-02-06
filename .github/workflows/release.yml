@@ -1,112 +1,112 @@
-name: Release
+# name: Release
 
-on:
-  push:
-    branches:
-      - 'main'
+# on:
+#   push:
+#     branches:
+#       - 'main'
 
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-20.04
+# jobs:
+#   build:
+#     name: Build
+#     runs-on: ubuntu-20.04
 
-    outputs:
-      version: ${{ steps.compile_variables.outputs.version }}
-      release_name: ${{ steps.compile_variables.outputs.release_name }}
+#     outputs:
+#       version: ${{ steps.compile_variables.outputs.version }}
+#       release_name: ${{ steps.compile_variables.outputs.release_name }}
 
-    steps:
-      - name: Code Checkout
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Code Checkout
+#         uses: actions/checkout@v2
 
-      - name: Compile Variables
-        id: compile_variables
-        run: |
-          echo "::set-output name=version::$(cat version.txt)"
-          echo "::set-output name=release_name::$(cat release.txt)"
+#       - name: Compile Variables
+#         id: compile_variables
+#         run: |
+#           echo "::set-output name=version::$(cat version.txt)"
+#           echo "::set-output name=release_name::$(cat release.txt)"
 
-      - name: Build
-        run: |
-          npm install
-          npm run build
-          npx gulp
+#       - name: Build
+#         run: |
+#           npm install
+#           npm run build
+#           npx gulp
 
-      - name: Cache Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: index.html
-          path: build/index.html
+#       - name: Cache Artifact
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: index.html
+#           path: build/index.html
 
-  create_release:
-    name: Create Release
-    needs: build
-    runs-on: ubuntu-20.04
+#   create_release:
+#     name: Create Release
+#     needs: build
+#     runs-on: ubuntu-20.04
 
-    outputs:
-      upload_url: ${{ steps.output_upload_url.outputs.upload_url }}
+#     outputs:
+#       upload_url: ${{ steps.output_upload_url.outputs.upload_url }}
 
-    steps:
-      - name: Code Checkout
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Code Checkout
+#         uses: actions/checkout@v2
 
-      - name: Craft Release
-        id: craft_release
-        uses: actions/create-release@v1
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ needs.build.outputs.release_name }}
-          tag_name: ${{ needs.build.outputs.version }}
-          body_path: ./CHANGELOG.md
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+#       - name: Craft Release
+#         id: craft_release
+#         uses: actions/create-release@v1
+#         with:
+#           draft: false
+#           prerelease: false
+#           release_name: ${{ needs.build.outputs.release_name }}
+#           tag_name: ${{ needs.build.outputs.version }}
+#           body_path: ./CHANGELOG.md
+#         env:
+#           GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Output Upload URL
-        id: output_upload_url
-        run: echo "::set-output name=upload_url::${{ steps.craft_release.outputs.upload_url }}"
+#       - name: Output Upload URL
+#         id: output_upload_url
+#         run: echo "::set-output name=upload_url::${{ steps.craft_release.outputs.upload_url }}"
 
-  upload-artifact:
-    name: Add Build Artifact to Release
-    needs: create_release
-    runs-on: ubuntu-20.04
+#   upload-artifact:
+#     name: Add Build Artifact to Release
+#     needs: create_release
+#     runs-on: ubuntu-20.04
 
-    steps:
-    - name: Fetch Cached Release Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: index.html
+#     steps:
+#     - name: Fetch Cached Release Artifact
+#       uses: actions/download-artifact@v2
+#       with:
+#         name: index.html
 
-    - name: Upload Cached Release Artifact
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ needs.create_release.outputs.upload_url }}
-        asset_path: ./index.html
-        asset_name: resume.html
-        asset_content_type: text/html
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Upload Cached Release Artifact
+#       uses: actions/upload-release-asset@v1
+#       with:
+#         upload_url: ${{ needs.create_release.outputs.upload_url }}
+#         asset_path: ./index.html
+#         asset_name: resume.html
+#         asset_content_type: text/html
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  update-github-pages:
-    name: Update Github Pages
-    needs:
-      - build
-      - create_release
-    runs-on: ubuntu-20.04
+#   update-github-pages:
+#     name: Update Github Pages
+#     needs:
+#       - build
+#       - create_release
+#     runs-on: ubuntu-20.04
 
-    steps:
-    - name: Checkout Github Pages Branch
-      uses: actions/checkout@v2
-      with:
-        ref: refs/heads/gh-pages
+#     steps:
+#     - name: Checkout Github Pages Branch
+#       uses: actions/checkout@v2
+#       with:
+#         ref: refs/heads/gh-pages
 
-    - name: Fetch Cached Release Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: index.html
+#     - name: Fetch Cached Release Artifact
+#       uses: actions/download-artifact@v2
+#       with:
+#         name: index.html
 
-    - name: Push build to Github Pages branch
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add index.html
-        git commit -m "Automated Update Github Pages for tag version ${{ needs.build.outputs.version }}" -m "Release Name: ${{ needs.build.outputs.release_name }}"
-        git push
+#     - name: Push build to Github Pages branch
+#       run: |
+#         git config user.name github-actions
+#         git config user.email github-actions@github.com
+#         git add index.html
+#         git commit -m "Automated Update Github Pages for tag version ${{ needs.build.outputs.version }}" -m "Release Name: ${{ needs.build.outputs.release_name }}"
+#         git push

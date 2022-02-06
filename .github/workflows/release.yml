@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'develop'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    outputs:
+      version: ${{ steps.compile_variables.outputs.version }}
+      release_name: ${{ steps.compile_variables.outputs.release_name }}
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Compile Variables
+        id: compile_variables
+        run: |
+          echo "::set-output name=version::$(cat version.txt)"
+          echo "::set-output name=release_name::$(cat release.txt)"
+
+      - name: Build
+        run: |
+          npm install
+          npm run build
+          npx gulp
+
+  create-release:
+    name: Create Release
+    needs: build
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Craft Release
+        uses: actions/create-release@v1
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ needs.build.outputs.release_name }}
+          tag_name: ${{ needs.build.outputs.version }}
+          body_path: ./CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+

@@ -24,3 +24,4 @@ yarn-error.log*
 
 # misc
 /.git.old
+.package-lock.json

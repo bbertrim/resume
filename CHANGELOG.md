@@ -1,9 +1,3 @@
-## Adds Github Actions for Automatic Builds
+## Add Github Pages
 
-Add Github Action to automatically build, tag and release merges to main. The built artifact will automatically get added to the Github Release.
-
-### Details:
-
-- The tag version is referenced from the version.txt file
-- The release title is referenced form the release.txt file
-- The release description is referenced from the CHANGELOG.md file
+Github pages for this repository are now turned on and points to the orphaned `gh-pages` branch. The build process defined in the Github Actions above will automatically push the built site to it.

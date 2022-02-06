@@ -85,3 +85,29 @@ jobs:
         asset_content_type: text/html
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-github-pages:
+    name: Update Github Pages
+    needs:
+      - build
+      - create_release
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout Github Pages Branch
+      uses: actions/checkout@v2
+      with:
+        ref: refs/heads/gh-pages
+
+    - name: Fetch Cached Release Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: index.html
+
+    - name: Push build to Github Pages branch
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add index.html
+        git commit -m "Automated Update Github Pages for tag version ${{ needs.build.outputs.version }}" -m "Release Name: ${{ needs.build.outputs.release_name }}"
+        git push

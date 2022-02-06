@@ -87,6 +87,7 @@ export const PrintLayout = props => {
                             <li>HTML/CSS/SASS</li>
                             <li>Java EE</li>
                             <li>JavaScript</li>
+                            <li>Github Actions</li>
                             <li>Microsoft SQL</li>
                             <li>MySQL/MariaDB</li>
                             <li>PostgreSQL</li>
@@ -117,6 +118,7 @@ export const PrintLayout = props => {
                             <li>Docker/Kubernetes</li>
                             <li>Drupal</li>
                             <li>GIT/SVN</li>
+                            <li>Github</li>
                             <li>Google Cloud Platform</li>
                             <li>Liferay</li>
                             <li>Maven/Gradle/NPM/PIP</li>

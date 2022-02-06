@@ -1,8 +1,8 @@
-# Adds Github Actions for Automatic Builds
+## Adds Github Actions for Automatic Builds
 
-Used Github Actions to automatically tag and release merges to master as well as build the release artifact and store it with the release.
+Add Github Action to automatically build, tag and release merges to main. The built artifact will automatically get added to the Github Release.
 
-## Details:
+### Details:
 
 - The tag version is referenced from the version.txt file
 - The release title is referenced form the release.txt file

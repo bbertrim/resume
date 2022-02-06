@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-20.04
 
     outputs:
@@ -30,16 +31,26 @@ jobs:
           npm run build
           npx gulp
 
-  create-release:
+      - name: Cache Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: index.html
+          path: build/index.html
+
+  create_release:
     name: Create Release
     needs: build
     runs-on: ubuntu-20.04
+
+    outputs:
+      upload_url: ${{ steps.output_upload_url.outputs.upload_url }}
 
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2
 
       - name: Craft Release
+        id: craft_release
         uses: actions/create-release@v1
         with:
           draft: false
@@ -50,4 +61,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
+      - name: Output Upload URL
+        id: output_upload_url
+        run: echo "::set-output name=upload_url::${{ steps.craft_release.outputs.upload_url }}"
 
+  upload-artifact:
+    name: Add Build Artifact to Release
+    needs: create_release
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Fetch Cached Release Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: index.html
+
+    - name: Upload Cached Release Artifact
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./index.html
+        asset_name: resume.html
+        asset_content_type: text/html
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -21,6 +21,7 @@ jobs:
               head: 'main',
               base: 'develop',
               title: 'Automated back-merge to develop from the main branch',
-              body: 'An automated pull request created for the intent of performing a back-merge from main to develop'
-            })
+              body: 'An automated pull request created for the intent of performing a back-merge from main to develop',
+              draft: false,
+            });
 

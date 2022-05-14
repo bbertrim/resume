@@ -1,1 +1,1 @@
-v1.2.6-hotfix Fixes build issue in Release Github Action
+v1.2.7 Add PDF generation to CI/CD

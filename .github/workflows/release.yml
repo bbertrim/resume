@@ -36,6 +36,34 @@ jobs:
           name: index.html
           path: build/index.html
 
+  generate-pdf:
+    name: Generate PDF
+    needs: build
+    runs-on: ubuntu-20.04
+
+    outputs:
+      version: ${{ steps.compile_variables.outputs.version }}
+      release_name: ${{ steps.compile_variables.outputs.release_name }}
+
+    steps:
+      - name: Get Chromium
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Fetch Cached Release Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: index.html
+
+      - name: Generate PDF
+        run: |
+          google-chrome --headless --disable-gpu --print-to-pdf=resume.pdf index.html
+
+      - name: Cache Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: resume.pdf
+          path: resume.pdf
+
   create_release:
     name: Create Release
     needs: build
@@ -64,7 +92,7 @@ jobs:
         id: output_upload_url
         run: echo "::set-output name=upload_url::${{ steps.craft_release.outputs.upload_url }}"
 
-  upload-artifact:
+  upload-artifact-html:
     name: Add Build Artifact to Release
     needs: create_release
     runs-on: ubuntu-20.04
@@ -82,6 +110,27 @@ jobs:
         asset_path: ./index.html
         asset_name: resume.html
         asset_content_type: text/html
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  upload-artifact-pdf:
+    name: Add Build Artifact to Release
+    needs: ['create_release', 'generate-pdf']
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Fetch Cached Release Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: resume.pdf
+
+    - name: Upload Cached Release Artifact
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./resume.pdf
+        asset_name: resume.pdf
+        asset_content_type: application/pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -104,6 +153,7 @@ jobs:
         name: index.html
 
     - name: Push build to Github Pages branch
+      continue-on-error: true   # If no content gets updated this step will fail. We don't want this step to fail the job if that's the case
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com

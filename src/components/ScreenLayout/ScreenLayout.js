@@ -6,9 +6,9 @@ import { useScrollPercentage } from 'react-scroll-percentage';
 // Section Components
 import ScreenHeader from './Components/ScreenHeader';
 import AboutMe from './Components/AboutMe';
-import Experience from './Components/Experience';
-import Skills from './Components/Skills';
-import Education from './Components/Education';
+import Experience from '../Shared/Experience';
+import Skills from '../Shared/Skills';
+import Education from '../Shared/Education';
 
 // Data
 import experienceData from '../../data/experience';

@@ -1,12 +1,1 @@
-v1.2.6 Centralize data/components and the addition of Terraform to skills
-
-# Content Updates
-
-- Add Terraform to list of skills
-
-# Technical Changes
-
-- Move sections into components driven by data (props)
-- Move hard coded text into json files for re-use and easier editing
-- Replace Node-Sass with Sass
-- Update back-merge Github action to fail silently. This will happen when there is no diff between master and main
+v1.2.6-hotfix Fixes build issue in Release Github Action

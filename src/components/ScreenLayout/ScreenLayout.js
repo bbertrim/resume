@@ -1,10 +1,10 @@
 import Navigation from '../Navigation/Navigation';
-import ScreenHeader from '../ScreenHeader/ScreenHeader';
 import React from 'react';
 import { getMinMaxScrollRange, normalizeNumber } from '../../helpers';
 import { useScrollPercentage } from 'react-scroll-percentage';
 
 // Section Components
+import ScreenHeader from './Components/ScreenHeader';
 import AboutMe from './Components/AboutMe';
 import Experience from './Components/Experience';
 import Skills from './Components/Skills';

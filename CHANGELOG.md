@@ -1,3 +1,4 @@
 ## Changes
 
-- Add Github Actions to skill section
+- Update to Empire Life description
+- Add PDF build to CI/CD pipeline

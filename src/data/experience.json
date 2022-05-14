@@ -4,7 +4,7 @@
         "title": "Full Stack Developer",
         "company": "Empire Life",
         "date": "2018-Present",
-        "description": ["Roles Include: Frontend development (React and Python/Django), backend development (Python/Fast API, Java/Spring Boot), application and architecture design with RESTful APIs and Event Busses (Kafka and PubSub), infrastructure setup using Google Cloud Platform for cloud based applications and Rancher/Kubernetes for on-premises applications, architecting Docker based applications for both production builds with scaling in mind and to assist in local development environments, and developing Continuous Integration using CircleCI and Github Actions for both on-premise and in cloud."]
+        "description": ["Roles Include: Frontend development (React and Python/Django), backend development (Python/Fast API, Java/Spring Boot), application and architecture design with RESTful APIs and Event Busses (PubSub), infrastructure setup using Google Cloud Platform for cloud based applications and Rancher/Kubernetes for on-premises applications, architecting Docker based applications for both production builds with scaling in mind and to assist in local development environments, and developing Continuous Integration using CircleCI/Github Actions for both on-premise and in cloud, and Infrastructure set up using Google Cloud Console/Terraform."]
     },
     {
         "id": "scribulations",

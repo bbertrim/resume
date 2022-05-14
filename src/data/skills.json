@@ -41,6 +41,7 @@
             "Liferay",
             "Maven/Gradle/NPM/PIP",
             "Spring Boot",
+            "Terraform",
             "Tomcat/GlassFish/Nginx",
             "Unity3D"
         ]

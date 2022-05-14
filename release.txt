@@ -1,4 +1,10 @@
-v1.2.6 Centralize Data
+v1.2.6 Centralize data/components and the addition of Terraform to skills
+
+# Content Updates
+
+- Add Terraform to list of skills
+
+# Technical Changes
 
 - Move sections into components driven by data (props)
 - Move hard coded text into json files for re-use and easier editing

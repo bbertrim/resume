@@ -1,5 +1,4 @@
-import PrintHeader from '../PrintHeader/PrintHeader';
-
+import PrintHeader from './components/PrintHeader';
 import CoverLetter from './components/CoverLetter';
 import Page1 from './components/Page1';
 import Page2 from './components/Page2';

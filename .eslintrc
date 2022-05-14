@@ -1,0 +1,3 @@
+{
+    "ignorePatterns": ["*/data/*.json"] // Needed to avoid warnings about json files matching file names of components
+}

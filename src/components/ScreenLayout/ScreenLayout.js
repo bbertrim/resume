@@ -1,14 +1,14 @@
-import Navigation from '../Navigation/Navigation';
 import React from 'react';
 import { getMinMaxScrollRange, normalizeNumber } from '../../helpers';
 import { useScrollPercentage } from 'react-scroll-percentage';
 
 // Section Components
-import ScreenHeader from './Components/ScreenHeader';
-import AboutMe from './Components/AboutMe';
-import Experience from '../Shared/Experience';
-import Skills from '../Shared/Skills';
-import Education from '../Shared/Education';
+import ScreenHeader from './components/ScreenHeader';
+import AboutMe from './components/AboutMe';
+import Navigation from './components/Navigation';
+import Experience from '../shared/Experience';
+import Skills from '../shared/Skills';
+import Education from '../shared/Education';
 
 // Data
 import experienceData from '../../data/experience';

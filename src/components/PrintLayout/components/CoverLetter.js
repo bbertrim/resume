@@ -1,4 +1,4 @@
-import PrintHeader from '../../PrintHeader/PrintHeader';
+import PrintHeader from '../components/PrintHeader';
 import signatureImage from '../../../images/signature.png';
 
 function CoverLetter(props){

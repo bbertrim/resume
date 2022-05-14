@@ -1,4 +1,4 @@
-import Experience from '../../Shared/Experience';
+import Experience from '../../shared/Experience';
 import experienceData from "../../../data/experience.json";
 
 function Page1(props){

@@ -1,5 +1,5 @@
-import Education from '../../Shared/Education';
-import Skills from '../../Shared/Skills';
+import Education from '../../shared/Education';
+import Skills from '../../shared/Skills';
 
 import educationData from "../../../data/education.json";
 import skillData from "../../../data/skills.json";

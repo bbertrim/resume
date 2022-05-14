@@ -1,4 +1,4 @@
-import { normalizeNumber } from "../../helpers";
+import { normalizeNumber } from "../../../helpers";
 
 export const Navigation = props => {
     const {scrollPercentage, minScroll, maxScroll} = props;

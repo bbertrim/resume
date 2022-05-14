@@ -1,1 +1,5 @@
-v1.2.5 Content Update
+v1.2.6 Centralize Data
+
+- Move sections into components driven by data (props)
+- Move hard coded text into json files for re-use and easier editing
+- Replace Node-Sass with Sass

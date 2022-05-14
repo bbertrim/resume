@@ -1,0 +1,23 @@
+[
+    {
+        "id": "",
+        "course": "Computer Programmer Analyst",
+        "school": "St. Lawrence College",
+        "date": "2008-2011",
+        "description": ["Advanced Diploma program that primarily focused on higher level software development which included C++, C#, Java, COBOL, JCL, PHP, and HTML/CSS. The final year required a work placement where I was placed at Queen's University Information Technology Services. After placement I was hired on to fill the lead developer role for the MyQueen'sU service."]
+    },
+    {
+        "id": "",
+        "course": "Computer Engineering Technology",
+        "school": "St. Lawrence College",
+        "date": "2003-2006",
+        "description": ["Advanced Diploma Program that focused on lower level software and hardware development as well as technical documentation. This included work with UML, integrated circuits, electronics, microcontrollers, 8086 assembly, C, C++, and MFC. In addition, there was a strong focus on core problem solving skills with: electronics, logic systems (Logic Gates and PIDs), classic software problems (Towers of Hanoi, Dining Philosophers, etc.), and core Object Oriented Concepts."]
+    },
+    {
+        "id": "",
+        "course": "Art Fundamentals",
+        "school": "Sheridan College",
+        "date": "2002-2003",
+        "description": ["Certificate program that offered an introduction to the graphic arts with a focus on building a portfolio. My primary studies included: Colour theory, painting, 2D/3D design, drafting, rendering, imaging systems, and life drawing"]
+    }
+]

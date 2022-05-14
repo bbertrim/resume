@@ -1,0 +1,34 @@
+[
+    {
+        "id": "empire-life",
+        "title": "Full Stack Developer",
+        "company": "Empire Life",
+        "date": "2018-Present",
+        "description": ["Roles Include: Frontend development (React and Python/Django), backend development (Python/Fast API, Java/Spring Boot), application and architecture design with RESTful APIs and Event Busses (PubSub), infrastructure setup using Google Cloud Platform for cloud based applications and Rancher/Kubernetes for on-premises applications, architecting Docker based applications for both production builds with scaling in mind and to assist in local development environments, and developing Continuous Integration using CircleCI/Github Actions for both on-premise and in cloud, and Infrastructure set up using Google Cloud Console/Terraform."]
+    },
+    {
+        "id": "scribulations",
+        "title": "Software Developer",
+        "company": "Scribulations Inc.",
+        "date": "2016-Present",
+        "description": [
+            "Owner and operator of Scribulations Inc. The purpose of this company is to support the licensing of assets to third parties and market places. Some projects include:",
+            "ScribIoC, a light weight Inversion of Control framework designed for Unity3D and written in C#. This solves a problem in which the Unity Engine manages all construction of managed objects, however, only offers a slow dependency resolution solution using the Service Locator pattern and string lookups.",
+            "A node-based noise generator designed to simplify the use of coherent noise in procedural generation via a visual editor. Additionally, it will provide the ability to write custom generators/nodes and rules that allow the user to extend and customize its functionality."
+        ]
+    },
+    {
+        "id": "queens",
+        "title": "Programmer Analyst",
+        "company": "Queen's University",
+        "date": "2012-2018",
+        "description": ["Roles included: Development lead for the MyQueensU Portal (Liferay/Spring/JavaEE), Web Publish developer (Drupal/PHP), development for standalone web applications (Symfony/PHP). Additional responsibilities: requirements gathering, database design, 1st/3rd party API integration, UX design, application administration, build solutions (Nexus/Maven), and docker environments."]
+    },
+    {
+        "id": "fuel-cell-technologies",
+        "title": "Software Developer",
+        "company": "Fuel Cell Technologies",
+        "date": "2006",
+        "description": ["During my final year of Computer Engineering we were tasked, as groups, to work as a contractor for a company. During this time, myself and two of my peers designed and developed a proof of concept communication protocol named “SOAP Utilized Delivery System” (SUDS) which was written in C++. It encapsulated their proprietary UDP protocol within the TCP transport layer. This protocol tunneled the communications between a centralized control system and a remote Fuel Cell which allowed control over the Internet. This allowed for easy setup as well as a reliable way to control the fuel cells remotely."]
+    }
+]

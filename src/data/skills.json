@@ -1,0 +1,59 @@
+[
+    {
+        "title": "Development",
+        "skills": [
+            "Bash",
+            "C++/C#",
+            "HTML/CSS/SASS",
+            "Java EE",
+            "JavaScript",
+            "Github Actions",
+            "Microsoft SQL",
+            "MySQL/MariaDB",
+            "PostgreSQL",
+            "PHP",
+            "Python"
+        ]
+    },
+    {
+        "title": "Frameworks",
+        "skills": [
+            "AngularJS",
+            "Bootstrap",
+            "Django",
+            "Fast API",
+            "JQuery",
+            "React",
+            "Spring/Hibernate",
+            "Symfony/Doctrine",
+            "YUI/AlloyUI"
+        ]
+    },
+    {
+        "title": "Technologies",
+        "skills": [
+            "Apache",
+            "Docker/Kubernetes",
+            "Drupal",
+            "GIT/SVN",
+            "Github",
+            "Google Cloud Platform",
+            "Liferay",
+            "Maven/Gradle/NPM/PIP",
+            "Spring Boot",
+            "Terraform",
+            "Tomcat/GlassFish/Nginx",
+            "Unity3D"
+        ]
+    },
+    {
+        "title": "Design",
+        "skills": [
+            "Adobe XD",
+            "Blender",
+            "Clip Studio Paint",
+            "Inkscape",
+            "Photoshop"
+        ]
+    }
+]

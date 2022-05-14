@@ -1,6 +1,6 @@
-import PhoneIcon from '../Icons/PhoneIcon';
-import EmailIcon from '../Icons/EmailIcon';
-import LinkedInIcon from '../Icons/LinkedInIcon';
+import PhoneIcon from '../../Icons/PhoneIcon';
+import EmailIcon from '../../Icons/EmailIcon';
+import LinkedInIcon from '../../Icons/LinkedInIcon';
 
 export const ScreenHeader = props => {
 

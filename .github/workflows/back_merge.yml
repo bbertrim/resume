@@ -12,16 +12,20 @@ jobs:
 
     steps:
       - name: Execute Pull Request Create command
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
-            github.rest.pulls.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              head: 'main',
-              base: 'develop',
-              title: 'Automated back-merge to develop from the main branch',
-              body: 'An automated pull request created for the intent of performing a back-merge from main to develop',
-              draft: false,
-            });
+            try {
+              github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                head: 'main',
+                base: 'develop',
+                title: 'Automated back-merge to develop from the main branch',
+                body: 'An automated pull request created for the intent of performing a back-merge from main to develop',
+                draft: false,
+              });
+            } catch (error) {
+              core.warning('Failed to create back-merge Pull request. This is likely because there is no diff between the main and develop branches.');
+            }
 

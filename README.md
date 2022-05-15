@@ -36,6 +36,7 @@ The build process is simple. Lean on react-scripts to build a final website then
 ## Build Steps
 
 ```bash
+npm install
 npm run build # Outputs standard production react build
 npx gulp      # Takes the production build and combines it all into the index.html file
 ```

@@ -2,8 +2,6 @@
 
 You can find the [latest build on the Github Releases](https://github.com/bbertrim/resume/releases/latest) page. Or you can visit the [Github Pages page](https://bbertrim.github.io/resume) where it is hosted.
 
-# My Resume in Web App Format
-
 The purpose for this project is to move away from my previous Resume format which was a PDF generated from an Adobe Photoshop project. The reasoning for the switch is below:
 
 1. A Photoshop License is expensive!

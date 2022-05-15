@@ -4,3 +4,4 @@
 - Move bubble images into the top level art folder
 - Update title text for the Github sticker
 - Uncomment and fix favicon reference
+- Add reference to cloud infrastructure and CI/CD pipeline experience to About Me and Cover Letter

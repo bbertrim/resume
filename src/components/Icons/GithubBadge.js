@@ -2,7 +2,7 @@ function GithubBadge() {
     return (
 
         <div id="github-sticker">
-            <a href="https://github.com/bbertrim/resume" tart="_blank" title="Source on Github">
+            <a href="https://github.com/bbertrim/resume" tart="_blank" title="View source on Github">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"

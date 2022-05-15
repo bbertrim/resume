@@ -1,1 +1,1 @@
-v1.2.8 Add Github Sticker to Screen view
+v1.2.9 Minor content updates

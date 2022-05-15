@@ -1,5 +1,7 @@
 ## Changes
 
-- Add Github Sticker to Screen view
-- Minor fix to wording for the Empire Life description
-- Add CSS to remove the Google Voice phone icon from the print view
+- README.md updates/fixes
+- Move bubble images into the top level art folder
+- Update title text for the Github sticker
+- Uncomment and fix favicon reference
+- Add reference to cloud infrastructure and CI/CD pipeline experience to About Me and Cover Letter

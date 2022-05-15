@@ -4,16 +4,16 @@ You can find the [latest build on the Github Releases](https://github.com/bbertr
 
 The purpose for this project is to move away from my previous Resume format which was a PDF generated from an Adobe Photoshop project. The reasoning for the switch is below:
 
-1. A Photoshop License is expensive!
+1. A Adobe Creative Cloud License is expensive!
 2. Although the document produced was accurate there were several issues with it:
-  - It was a very large file size.
-  - Each page was its own layer and they had to be combined manually in Acrobat.
-  - There were, at times, issues with fonts not rendering correctly when exported as a PDF.
-3. As a stand alone web page/app the file is much smaller and allows device targeting.
-  - Web experience can be made better and more appealing as well as to show off my we development skills.
-  - Having print styles allows for a PDF to be generated that is suited for the print medium.
-  - A decent mobile experience can be crafted.
-  - I can use this as an excuse to play around with new technologies.
+    - It was a very large file size.
+    - Each page was its own layer and they had to be combined manually in Acrobat.
+    - There were, at times, issues with fonts not rendering correctly when exported as a PDF.
+3. As a standalone web page/app the file is much smaller and allows device targeting.
+    - Web experience can be made better and more appealing as well as to show off my we development skills.
+    - Having print styles allows for a PDF to be generated that is suited for the print medium.
+    - A decent mobile experience can be crafted.
+    - I can use this as vector to play around with new technologies.
 
 # Tools and Applications Used
 

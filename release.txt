@@ -1,1 +1,1 @@
-v1.2.7 Add PDF generation to CI/CD
+v1.2.8 Add Github Sticker to Screen view

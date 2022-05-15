@@ -14,6 +14,7 @@ import Education from '../shared/Education';
 import experienceData from '../../data/experience';
 import educationData from '../../data/education';
 import skillData from '../../data/skills.json';
+import GithubBadge from '../Icons/GithubBadge';
 
 export const ScreenLayout = props => {
 
@@ -58,6 +59,8 @@ export const ScreenLayout = props => {
                     <div class="text full">Looking for a PDF or printable version? You can use your browser's built in <button type="button" onClick={ () => window.print() }>Print</button> functionality for that!</div>
                     <div class="text minimal">Use your browser's <button type="button" onClick={ () => window.print() }>Print</button> functionality for a PDF/Print friendly version!</div>
                 </div>
+
+                <GithubBadge />
             </content>
 		</div>
 	)

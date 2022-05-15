@@ -264,6 +264,12 @@
             background-position-x: center;
             background-position-y: 100%;
         }
+
+        #github-sticker {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
     }
 }
 
@@ -287,6 +293,10 @@
                 content {
                     width: 720px;
                 }
+            }
+
+            #github-sticker {
+                position: absolute;
             }
 
             section{

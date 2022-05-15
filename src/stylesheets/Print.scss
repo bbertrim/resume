@@ -205,4 +205,9 @@
             }
         }
     }
+
+    // Hide the Google Voice icon if the user has the extension installed
+    a.gv-tel-link{
+        display: none !important;
+    }
 }

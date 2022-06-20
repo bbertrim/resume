@@ -4,7 +4,7 @@ You can find the [latest build on the Github Releases](https://github.com/bbertr
 
 The purpose for this project is to move away from my previous Resume format which was a PDF generated from an Adobe Photoshop project. The reasoning for the switch is below:
 
-1. A Adobe Creative Cloud License is expensive!
+1. An Adobe Creative Cloud License is expensive!
 2. Although the document produced was accurate there were several issues with it:
     - It was a very large file size.
     - Each page was its own layer and they had to be combined manually in Acrobat.
@@ -31,7 +31,7 @@ The purpose for this project is to move away from my previous Resume format whic
 
 # Build
 
-The build process is simple. Lean on react-scripts to build a final website then use a Gulp build script to combine all files into a single html source file.
+The build process is simple. It leans on react-scripts to build a final website then uses a Gulp build script to combine all files into a single html source file.
 
 ## Build Steps
 
@@ -61,7 +61,7 @@ There are two Github actions that drive the CI/CD pipeline
 
 - Store fonts within the generated `index.html` file via data URLs
 - Fix issue with Safari PDF export (Safari has a hard coded 2cm margin which causes every other page to be blank when printing)
-- Improve scrolling effects an employ other effects such as parallax and translation transitions instead of just opacity
+- Improve and employ other effects such as parallax and translation transitions instead of just opacity
 - Add navigatable subsections for web view with additional information such as accomplishments and more detailed information around each section
 - Improve the visuals for the Print bubble
 - Figure out a better way to import svg files that will embed them in the built html file automatically rather then adding the SVG XML directly to the react components.
